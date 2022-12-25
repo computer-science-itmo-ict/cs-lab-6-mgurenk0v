@@ -17,34 +17,48 @@ $\{x_n\} \subset (a, b), \: x_n \neq x_0, \: x_n \rightarrow x_0, \: n \rightarr
 \caption{Предел функции по Гейне}
 \end{figure}
 
-В этом случае пишут
-\begin{eqnarray}
+В этом случае пишут ~\eqref{f1}
+\begin{equation}
+\label{f1}
+\centering
 \lim_{x\to x_0} f(x)=A
-\end{eqnarray}
+\end{equation}
 
 \textbf{Определение 7.5} (определение предела по Коши).
-Число $A$ называется \textit{пределом функции $f$ при $x \rightarrow x_0$}, если
+Число $A$ называется \textit{пределом функции $f$ при $x \rightarrow x_0$}, если ~\eqref{f2}
 
-\centerline{$\forall \epsilon >0 \; \; \exists \: \delta (\epsilon) >0 : \forall x \in (a,b) \rightarrow (0<|x-x_0|<\delta) \Rightarrow (|f(x)-A|<\epsilon)$.}
+\begin{equation}
+\label{f2}
+\centering
+\forall \epsilon >0 \; \; \exists \: \delta (\epsilon) >0 : \forall x \in (a,b) \rightarrow (0<|x-x_0|<\delta) \Rightarrow (|f(x)-A|<\epsilon).
+\end{equation}
 
 \begin{figure}[H]
 \centerline{\includegraphics[width=0.6\linewidth]{pic2.png}}
 \caption{Предел функции по Коши}
 \end{figure}
 
-\textbf{Теорема 7.1.} \textit{ Определения предела функции по Гейне и по Коши эквивалентны.}
-\newline \indent Доказательство. Докажем, что из определения по
+\begin{theorem}
+Определения предела функции по Гейне и по Коши эквивалентны.
+\end {theorem} 
+\begin {proof}
+Докажем, что из определения по
 Гейне следует определение по Коши. Проведем доказательство методом от противного.
-\newline Пусть $\lim\limits_{x\to 0} f(x)=A$ по Гейне, но не по Коши, т. е.
+\newline Пусть $\lim\limits_{x\to 0} f(x)=A$ по Гейне, но не по Коши, т. е. ~\eqref{f3}
 \newline
+\begin{equation}
+\label{f3}
+\centering
+\exists \: \epsilon >0 \; \; \forall \: \delta (\epsilon) >0 \; \; \exists \: x_\delta \in (a, b) : (0<|x_\delta-x_0|<\delta \land |f(x_\delta)-A|\geq \epsilon).
+\end{equation}
 \newline
-\centerline{$\exists \: \epsilon >0 \; \; \forall \: \delta (\epsilon) >0 \; \; \exists \: x_\delta \in (a, b) : (0<|x_\delta-x_0|<\delta \land |f(x_\delta)-A|\geq \epsilon)$.}
+Пусть $\delta = \frac{1}{n}$. Тогда найдутся $x_n \in (a, b)$ такие, что ~\eqref{f4}
 \newline
-\newline Пусть $\delta = \frac{1}{n}$. Тогда найдутся $x_n \in (a, b)$ такие, что
-\newline
-\newline
-\centerline{$0<|x_n-x_0|<\frac{1}{n}, \: |f(x_n)-A|\geq \epsilon$}
-\newline
+\begin{equation}
+\label{f4}
+\centering
+0<|x_n-x_0|<\frac{1}{n}, \: |f(x_n)-A|\geq \epsilon
+\end{equation}
 \newline
 Отсюда $x_n \neq x_0, \; x_n \rightarrow x_0$ но $f(x_n) \nrightarrow A$, что противоречит тому, что $f(x_n) \rightarrow A$ по Гейне.
 \newline \indent Теперь докажем, что из определения предела по Коши
@@ -52,16 +66,19 @@ $\{x_n\} \subset (a, b), \: x_n \neq x_0, \: x_n \rightarrow x_0, \: n \rightarr
 \newline \indent \vspace{2mm} Пусть $\lim\limits_{x\to 0} f(x)=A$ по Коши. Возьмем любую последовательность $\{x_n\} \subset (a, b), \: x_n \rightarrow x_0, \: x_n \neq x_0$. Возьмем любое $\epsilon > 0$. Тогда из определения предела по Коши найдется $\delta > 0$, для которого, в силу сходимости $x_n \rightarrow x_0$, найдется номер $N$ такой, что $|x_n-x_0| < \delta$ при $n > N$. Тогда из
 определения предела по Коши следует, что $|f(x_n)-A| < \epsilon$,
 что означает, что $f(x_n) \rightarrow A$, т. е. $\lim\limits_{x\to 0} f(x)=A$ в смысле определения Гейне.
+\end {proof}
 
-\textbf{Теорема 8.3} (первая теорема Вейерштрасса). \textit{Если
-функция непрерывна на отрезке, то она ограничена на
-нем.}
-\newline \indent Доказательство. Пусть функция $f$ непрерывна на
-$[a, b]$. Необходимо доказать, что
+\begin{theorem} \emph{Первая теорема Вейерштрасса.}
+Если функция непрерывна на отрезке, то она ограничена на нем
+\end {theorem} 
+\begin {proof}
+Пусть функция $f$ непрерывна на $[a, b]$. Необходимо доказать, что ~\eqref{f5}
 \newline
-\newline
-\centerline{$\exists \: M>0 : \forall x \in [a, b] \rightarrow |f(x)| \leq M$}
-\newline
+\begin{equation}
+\label{f5}
+\centering
+\exists \: M>0 : \forall x \in [a, b] \rightarrow |f(x)| \leq M
+\end{equation}
 \newline
 Доказательство проведем методом от противного. Пусть
 для каждого $M > 0$ найдется точка $x_M \in [a, b]$ такая, что
@@ -72,7 +89,8 @@ $x_n \in [a, b]$ такая, что $|f(x_n)| > n$. Мы получим посл
 $f$ на отрезке $[a, b]$ и, в частности, в точке $c$ следует, что
 $f(x_{n_k}) \rightarrow f(c)$, в то время как по построению $f(x_{n_k}) \rightarrow \infty$.
 Полученное противоречие доказывает теорему.
-\newline
+\end{proof}
+
 \indent
 Вся информация взята из книги Гурьяновой К.Н. "Математический анализ" \cite{matan}
 \newpage
